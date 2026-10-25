@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "Set up project",
+    "status": "done",
+    "description": "This is a description",
+    "dueDate": "2024-04-13"
+  },
+  {
+    "id": "2",
+    "title": "Build task list UI",
+    "status": "inprogress",
+    "description": "This is a description",
+    "dueDate": "2024-04-13"
+  },
+  {
+    "id": "3",
+    "title": "Wire up fake database",
+    "status": "todo",
+    "description": "This is a description",
+    "dueDate": "2024-04-13"
+  }
+]
