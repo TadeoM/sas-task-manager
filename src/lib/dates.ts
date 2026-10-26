@@ -1,5 +1,6 @@
 export const isOverdue = (dueDate: string): boolean => {
   const today = new Date().toISOString().slice(0, 10);
+  // YYYY-MM-DD strings sort the same as dates, so a string compare works
   return dueDate < today;
 };
 

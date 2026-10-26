@@ -8,10 +8,10 @@ yarn start
 Runs at `http://localhost:5173`.
 
 Other commands:
-- `yarn build` — type-checks and builds for production
-- `yarn test` — unit tests (Vitest)
-- `yarn e2e` — end-to-end tests (Playwright); boots the dev server itself if one isn't already running
-- `yarn lint` / `yarn format` — Biome
+- `yarn build`: type-checks and builds for production
+- `yarn test`: unit tests (Vitest)
+- `yarn e2e`: end-to-end tests (Playwright); boots the dev server itself if one isn't already running
+- `yarn lint` / `yarn format`: Biome
 
 # Tech Stack
 
@@ -60,6 +60,6 @@ I was most concerned with end to end testing here, but to briefly talk about the
 
 The end to end testing was the part that I tried to have better coverage on/was more concerned about. Probably the one I think was most useful is the drag and drop/keyboard task management functionality. It covers a couple things, this feature is integral to the app's purpose, and it tests accessibility for two main types of users. 
 
-I skipped a middle layer of integration tests (React Testing Library + jsdom). Most of what makes this app tricky is @dnd-kit's drag-and-drop, the CSS Grid layout, depends on  pointer events and actual positions on the page, which jsdom just doesn't simulate. Testing those there wouldn't really be testing a real behavior. The logic that's actually worth isolating already lives in plain functions, covered by the unit tests, and everything else is already exercised by the e2e suite in a real browser. A third layer here would've mostly meant re-testing what I already had, against a fake version of the libraries.
+I also thought about adding integration tests with React Testing Library, but decided against it. The trickiest parts of the app are the drag and drop and the grid layout, and from what I read, jsdom doesn't really handle pointer events or page positions, so those tests wouldn't tell me much about whether it actually works. The date helpers were the main logic I could pull out on its own, and those have unit tests, and the rest is covered by the Playwright tests in a real browser. I felt like a middle layer would mostly be testing the same things twice.
 
 An option I had for data reliability was using ZOD to validate data structures. In a larger project I would 100% use it, but for this small app, I didn't think it was necessary. I added a short validation script in the fake repository and called it a day.

@@ -18,8 +18,7 @@ import AccessTime from '@mui/icons-material/AccessTime';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import { formatToMonthDate, isOverdue } from '../lib/dates';
 
-// Vermillion, not pure red — part of the Okabe-Ito colorblind-safe palette,
-// stays distinguishable for protanopia/deuteranopia in a way pure red doesn't.
+// orange appears better in contrast for overdue notification
 const OVERDUE_COLOR = '#D55E00';
 
 export interface TaskItemActions {
@@ -49,6 +48,7 @@ export const TaskItem = ({ task, actions }: TaskItemProps) => {
   });
   const [isOpen, setIsOpen] = useState(false);
 
+  // handles shifting task items between lists with ctrl + arrow keys
   const handleKeyDown = (e: KeyboardEvent<HTMLLIElement>) => {
     const typingInTitle =
       e.target instanceof HTMLInputElement && e.target.type === 'text';
@@ -80,6 +80,7 @@ export const TaskItem = ({ task, actions }: TaskItemProps) => {
           <IconButton
             size="small"
             aria-label={`Reorder ${task.title}`}
+            // stops mobile from scrolling instead of dragging
             sx={{ touchAction: 'none' }}
             {...attributes}
             {...listeners}

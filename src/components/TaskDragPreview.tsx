@@ -7,6 +7,7 @@ interface TaskDragPreviewProps {
   task: Task;
 }
 
+// used to show dragging while outside of task list
 export const TaskDragPreview = ({ task }: TaskDragPreviewProps) => {
   return (
     <Paper

@@ -17,6 +17,7 @@ export const useTasks = () => {
 
   const addTask = (title: string, status: Status) => {
     setTasks((prev) => {
+      // ids are just incrementing numbers, take the highest and add one
       const nextId =
         prev.reduce((max, task) => Math.max(max, Number(task.id) || 0), 0) + 1;
       return [...prev, { id: String(nextId), title, status }];

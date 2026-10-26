@@ -15,8 +15,8 @@ test('renders the three columns from seed data', async ({ page }) => {
 
 test('adding a task shows it in that column', async ({ page }) => {
   const todoColumn = page.getByRole('region', { name: 'To Do' });
-  await todoColumn.getByPlaceholder('Add a task…').fill('Write tests');
-  await todoColumn.getByPlaceholder('Add a task…').press('Enter');
+  await todoColumn.getByPlaceholder('Add a task...').fill('Write tests');
+  await todoColumn.getByPlaceholder('Add a task...').press('Enter');
 
   await expect(
     todoColumn.getByRole('button', {name: "Write tests"}).last(),
@@ -66,8 +66,8 @@ test('dragging a task by keyboard reorders it within its column', async ({
 }) => {
   const todoColumn = page.getByRole('region', { name: 'To Do' });
 
-  await todoColumn.getByPlaceholder('Add a task…').fill('Second task');
-  await todoColumn.getByPlaceholder('Add a task…').press('Enter');
+  await todoColumn.getByPlaceholder('Add a task...').fill('Second task');
+  await todoColumn.getByPlaceholder('Add a task...').press('Enter');
 
   await expect(todoColumn.getByRole('listitem')).toHaveCount(2);
   await expect(

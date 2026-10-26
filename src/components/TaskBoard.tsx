@@ -65,6 +65,7 @@ export const TaskBoard = () => {
     const activeId = String(active.id);
     const overId = String(over.id);
 
+    // empty lists have no tasks to drop onto, so the list itself is the drop target
     const droppedOnEmptyColumn = STATUS_ORDER.find(
       (status) => taskListDropId(status) === overId,
     );

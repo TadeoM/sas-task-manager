@@ -83,7 +83,7 @@ export const TaskList = ({
 
         <TextField
           size="small"
-          placeholder="Add a task…"
+          placeholder="Add a task..."
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && addTypedTask()}
