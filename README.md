@@ -3,6 +3,8 @@
 ```
 yarn install
 yarn start
+yarn e2e // runs playwright tests
+yarn test // runs unit tests
 ```
 
 Runs at `http://localhost:5173`.
