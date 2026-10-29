@@ -1,6 +1,7 @@
 # Getting Started
 
 ```
+npm install -g yarn (global install, if you don’t want to do this, you can skip this and prepend npx to all the commands below)
 yarn install
 yarn start
 yarn e2e // runs playwright tests
