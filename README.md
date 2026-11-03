@@ -68,3 +68,7 @@ The end to end testing was the part that I tried to have better coverage on/was 
 I also thought about adding integration tests with React Testing Library, but decided against it. The trickiest parts of the app are the drag and drop and the grid layout, and from what I read, jsdom doesn't really handle pointer events or page positions, so those tests wouldn't tell me much about whether it actually works. The date helpers were the main logic I could pull out on its own, and those have unit tests, and the rest is covered by the Playwright tests in a real browser. I felt like a middle layer would mostly be testing the same things twice.
 
 An option I had for data reliability was using ZOD to validate data structures. In a larger project I would 100% use it, but for this small app, I didn't think it was necessary. I added a short validation script in the fake repository and called it a day.
+
+# AI Tools
+
+I used Claude to assist me with filling in comment gaps in the codebase and formatting/grammatical reviewing.
